@@ -32,6 +32,7 @@ public class Building
     public int HP { get; set; }
     public int MaxHp { get; set; } = 1500;
     public bool Visible { get; set; } = true;
+    public List<Tile> OccupiedTiles { get; set; } = new List<Tile>();
 }
 
 public class Resource

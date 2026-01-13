@@ -32,6 +32,9 @@ public class GameState
 	// Entidad seleccionada
 	public int? SelectedEntityId { get; set; } = null;
 	
+	// Selección múltiple
+	public List<int> SelectedUnitIds { get; set; } = new List<int>();
+	
 	public GameState() { }
 	
 	/// <summary>

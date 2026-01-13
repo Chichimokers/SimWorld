@@ -50,8 +50,8 @@ En `NetworkManager.cs`, editar los exports:
 GameRenderer._Input() 
   → Click en unidad: selectedUnitId = unitId
   → Click en terreno: SendMove(selectedUnitId, pos)
-    → NetworkManager.SendMove() 
-      → WebSocket.SendText(JSON)
+	→ NetworkManager.SendMove() 
+	  → WebSocket.SendText(JSON)
 ```
 
 ### 5. Flujo de actualización de estado
@@ -60,12 +60,12 @@ NetworkManager._Process()
   → webSocket.Poll()
   → Recibe JSON del servidor
   → ProcessMessage()
-    → HandleSnapshot() 
-      → SnapshotParser.ParseSnapshot()
-      → gameState.ApplySnapshot()
-      → EmitSignal(OnSnapshotReceived)
-        → GameRenderer.UpdateFromSnapshot()
-          → QueueRedraw()
+	→ HandleSnapshot() 
+	  → SnapshotParser.ParseSnapshot()
+	  → gameState.ApplySnapshot()
+	  → EmitSignal(OnSnapshotReceived)
+		→ GameRenderer.UpdateFromSnapshot()
+		  → QueueRedraw()
 ```
 
 ## Comandos disponibles (por implementar)

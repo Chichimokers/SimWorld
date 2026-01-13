@@ -166,7 +166,7 @@ public class SnapshotParser
     
     private Building ParseBuilding(Godot.Collections.Dictionary data)
     {
-        return new Building
+        var building = new Building
         {
             Id = (int)data["id"],
             Owner = (int)data["owner"],
@@ -178,6 +178,22 @@ public class SnapshotParser
             HP = data.ContainsKey("hp") ? (int)data["hp"] : 200,
             MaxHp = data.ContainsKey("maxHp") ? (int)data["maxHp"] : 200
         };
+        
+        // Parsear tiles ocupados
+        if (data.ContainsKey("occupiedTiles"))
+        {
+            var tilesList = (Godot.Collections.Array)data["occupiedTiles"];
+            foreach (Godot.Collections.Dictionary tileData in tilesList)
+            {
+                building.OccupiedTiles.Add(new Tile
+                {
+                    X = (int)tileData["x"],
+                    Y = (int)tileData["y"]
+                });
+            }
+        }
+        
+        return building;
     }
     
     private Resource ParseResource(Godot.Collections.Dictionary data)

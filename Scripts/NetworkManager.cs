@@ -238,10 +238,13 @@ public partial class NetworkManager : Node
 		
 		isJoined = false;
 		isReady = false;
-		reconnectAttempts++;
-		
-		GD.PrintErr($"❌ Desconectado. Intentando reconectar ({reconnectAttempts}/{MaxReconnectAttempts})...");
-		EmitSignal(SignalName.OnDisconnected);
+		   reconnectAttempts++;
+		   GD.PrintErr($"❌ Desconectado. Intentando reconectar ({reconnectAttempts}/{MaxReconnectAttempts})...");
+		   EmitSignal(SignalName.OnDisconnected);
+		   if (reconnectAttempts >= MaxReconnectAttempts)
+		   {
+			   GD.PrintErr("❌ No se pudo reconectar al servidor. Por favor, reinicia el juego.");
+		   }
 	}
 	
 	// API pública para enviar comandos

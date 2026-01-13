@@ -47,6 +47,11 @@ public partial class GameManager : Node
 	private void HandleDisconnected()
 	{
 		GD.PrintErr("🎮 Desconectado del servidor.");
+		// Mostrar mensaje visual de reconexión
+		var popup = new AcceptDialog();
+		popup.DialogText = "Conexión perdida. Intentando reconectar... Si el problema persiste, reinicia el juego.";
+		AddChild(popup);
+		popup.PopupCentered();
 	}
 	
 	private void HandleSnapshotReceived()
