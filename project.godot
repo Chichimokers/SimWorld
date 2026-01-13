@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SupaWorld"
-run/main_scene="uid://cm7jbrxoijou5"
+run/main_scene="uid://ddmcgi8t1rcrj"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
