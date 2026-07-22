@@ -1,18 +1,17 @@
 # SimWorld
 
-## Tecnologias
-- C#
+## Lenguajes
+- {'size': 69386, 'node': {'name': 'C#'}}
 
 ## Instalacion
 
 ```bash
-dotnet restore
-dotnet run
+git clone https://github.com/Chichimokers/SimWorld.git
+cd SimWorld
+pip install -r requirements.txt  # o npm install
+python run.py  # o npm run dev
 ```
 
-## Descripcion
-
-Proyecto SimWorld.
-
 ---
-(c) 2026 Chichimokers -- https://github.com/Chichimokers/SimWorld
+
+(c) 2026 Chichimokers - Proyecto Privado
