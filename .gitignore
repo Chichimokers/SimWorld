@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+config.bat
+node_modules
